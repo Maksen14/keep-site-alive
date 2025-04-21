@@ -1,0 +1,16 @@
+name: Keep Multiple Websites Alive
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # every 10 minutes
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl all websites
+        run: |
+          curl --silent https://cms-demo-f1cz.onrender.com
+          # curl --silent https://another-website.onrender.com
+          # curl --silent https://my-third-website.com
