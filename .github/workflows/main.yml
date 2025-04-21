@@ -11,6 +11,5 @@ jobs:
     steps:
       - name: Curl all websites
         run: |
-          curl --silent https://cms-demo-f1cz.onrender.com
-          # curl --silent https://another-website.onrender.com
-          # curl --silent https://my-third-website.com
+          curl --fail --silent https://cms-demo-f1cz.onrender.com || echo "cms-demo is DOWN"
+          # curl --fail --silent https://another-website.onrender.com || echo "another-website is DOWN"
